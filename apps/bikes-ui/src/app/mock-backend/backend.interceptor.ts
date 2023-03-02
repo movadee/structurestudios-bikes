@@ -60,7 +60,8 @@ export class MockBackendInterceptor implements HttpInterceptor {
     return this.ok(bike);
   }
 
-  deleteBike(bikeId: number | string) {
+  deleteBike(url: string) {
+    const bikeId = this.idFromUrl(url);
     const bikes = this.fakeDB().filter((x) => x.articleCompleteInfo.articleID != bikeId);
     this.updateFakeDB(bikes);
     return this.ok();
