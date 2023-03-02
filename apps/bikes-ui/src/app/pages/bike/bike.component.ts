@@ -10,8 +10,8 @@ import { BikeService } from './bike.service';
 @Component({
   selector: 'ss-bike',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './bike.component.html',
+  imports: [CommonModule, ReactiveFormsModule],
 })
 export class BikeComponent {
   constructor(private router: Router, public bikeService: BikeService, public apiService: ApiService) {}
