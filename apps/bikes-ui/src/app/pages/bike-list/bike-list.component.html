@@ -1,0 +1,8 @@
+<section aria-labelledby="product-heading">
+  <h2 id="product-heading" class="sr-only">Bikes</h2>
+  <ul role="list" class="grid gap-x-4 gap-y-7 grid-cols-3">
+    <li *ngFor="let bike of bikes" class="relative">
+      <ss-bike-card [bike]="bike"></ss-bike-card>
+    </li>
+  </ul>
+</section>

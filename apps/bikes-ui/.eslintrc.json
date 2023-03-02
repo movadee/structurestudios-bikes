@@ -17,7 +17,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "structurestudios-bikes",
+            "prefix": "ss",
             "style": "kebab-case"
           }
         ]
