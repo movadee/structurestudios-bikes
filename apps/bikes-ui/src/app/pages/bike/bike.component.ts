@@ -3,8 +3,9 @@ import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { ApiService } from '../../api.service';
 import { Bike } from '../../bike.model';
-import { BikeService } from '../../bike.service';
+import { BikeService } from './bike.service';
 
 @Component({
   selector: 'ss-bike',
@@ -13,24 +14,27 @@ import { BikeService } from '../../bike.service';
   templateUrl: './bike.component.html',
 })
 export class BikeComponent {
-  constructor(private router: Router, public bikeService: BikeService) {}
+  constructor(private router: Router, public bikeService: BikeService, public apiService: ApiService) {}
+
+  saveBike() {
+    // TODO: this code needs to be refactored so that form changes auto sync with full bike object
+    this.bikeService.updateBike();
+    this.apiService.saveBike(this.bikeService.bike).subscribe((bike: Bike) => {
+      this.bikeService.setBike(bike);
+    });
+  }
 
   editBike() {
     this.bikeService.bikeForm.enable();
   }
 
-  saveBike() {
-    const newValue = this.bikeService.bikeForm.value;
-    this.bikeService.bike.articleCompleteInfo.price = newValue.price;
-    this.bikeService.bike.engineAndTransmission.exhaustSystemName = newValue.description;
-
-    this.bikeService.saveBike(this.bikeService.bike).subscribe((bike: Bike) => {
-      this.bikeService.setBike(bike);
-    });
+  cancelEditBike() {
+    this.bikeService.resetBikeForm();
+    this.bikeService.bikeForm.disable();
   }
 
-  deleteBike() {
-    this.bikeService.deleteBike(this.bikeService.bike.articleCompleteInfo.articleID).subscribe((data) => {
+  deleteBike(): void {
+    this.apiService.deleteBike(this.bikeService.bikeId()).subscribe((_) => {
       this.router.navigate(['']);
     });
   }

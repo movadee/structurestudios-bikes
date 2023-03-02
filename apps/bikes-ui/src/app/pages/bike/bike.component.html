@@ -23,18 +23,29 @@
     ></textarea>
 
     <!--  control buttons -->
-    <!--  note: better code will be to move buttons to separate components and apply components dynamically to the page depending on it's state -->
     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
-      <button *ngIf="bikeService.bikeForm.disabled" type="button" (click)="editBike()" class="primary-btn">Edit</button>
-      <button *ngIf="bikeService.bikeForm.enabled" type="submit" (click)="saveBike()" class="primary-btn">Save</button>
-      <button type="button" (click)="deleteBike()" class="secondary-btn">Delete</button>
+      <!-- buttons displayed when user view bike -->
+      <ng-container *ngIf="bikeService.bikeForm.disabled">
+        <button type="button" (click)="editBike()" class="primary-btn">Edit</button>
+        <button type="button" (click)="deleteBike()" class="secondary-btn">Delete</button>
+      </ng-container>
+
+      <!-- buttons displayed when user edit bike -->
+      <ng-container *ngIf="bikeService.bikeForm.enabled">
+        <button type="submit" (click)="saveBike()" class="primary-btn">Save</button>
+        <button type="button" (click)="cancelEditBike()" class="secondary-btn">Cancel</button>
+      </ng-container>
     </div>
   </div>
 
   <!-- Product image -->
   <div class="col-span-4 row-end-1">
     <div class="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg">
-      <img src="{{ bikeService.bike.articleCompleteInfo.image }}" alt="" class="object-cover object-center relative" />
+      <img
+        src="{{ bikeService.bike.articleCompleteInfo.image || bikeService.defaultImg }}"
+        alt=""
+        class="object-cover object-center relative"
+      />
     </div>
   </div>
 </form>
