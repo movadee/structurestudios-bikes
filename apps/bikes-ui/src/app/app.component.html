@@ -1,2 +1,36 @@
-<structurestudios-bikes-nx-welcome></structurestudios-bikes-nx-welcome>
-<router-outlet></router-outlet>
+<!-- header -->
+<header class="relative bg-white pb-8">
+  <!-- free delivery banner -->
+  <ss-top-banner></ss-top-banner>
+  <nav aria-label="top" class="mx-auto max-w-screen-2xl px-8">
+    <div class="border-b border-gray-300">
+      <div class="flex h-16 items-center justify-between">
+        <!-- menu -->
+        <ss-menu class="flex flex-1 self-stretch ml-3"></ss-menu>
+        <!-- logo -->
+        <ss-logo class="flex"></ss-logo>
+        <!-- currency, account, cart, etc. -->
+        <div class="flex flex-1 items-center justify-end mr-3">
+          <ss-currency></ss-currency>
+          <ss-account></ss-account>
+          <ss-cart></ss-cart>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="mx-auto max-w-screen-2xl px-8">
+  <!-- add new bike -->
+  <div class="flex flex-wrap text-center justify-center mb-10">
+    <ss-add-bike></ss-add-bike>
+  </div>
+  <!-- page content -->
+  <router-outlet></router-outlet>
+</main>
+
+<!-- footer -->
+<footer aria-labelledby="footer-heading" class="mx-auto max-w-screen-2xl mt-24 mb-12 border-t border-gray-300">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <ss-copyright></ss-copyright>
+</footer>

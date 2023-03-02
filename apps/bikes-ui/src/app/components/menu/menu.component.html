@@ -1,0 +1,9 @@
+<div class="flex h-full space-x-8">
+  <a
+    *ngFor="let menuItem of menu"
+    [routerLink]="menuItem.routerLink"
+    class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+  >
+    {{ menuItem.name }}
+  </a>
+</div>
