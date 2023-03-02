@@ -221,18 +221,6 @@ export const YAMAHA_MOCK_DATA: Bike[] = [
 
 export const YAMAHA_MODEL_LIST: BikeModel[] = [
   {
-    id: 15091,
-    name: '250 Racer',
-  },
-  {
-    id: 15092,
-    name: '3CT Concept',
-  },
-  {
-    id: 15093,
-    name: 'Aerox 155VVA',
-  },
-  {
     id: 15094,
     name: 'Aerox 4',
   },
@@ -313,10 +301,6 @@ export const YAMAHA_MODEL_LIST: BikeModel[] = [
     name: 'Alba 110',
   },
   {
-    id: 15114,
-    name: 'Alpha',
-  },
-  {
     id: 15115,
     name: 'AS 3',
   },
@@ -371,10 +355,6 @@ export const YAMAHA_MODEL_LIST: BikeModel[] = [
   {
     id: 15128,
     name: 'Bolt R-Spec',
-  },
-  {
-    id: 15129,
-    name: 'Bruin 250',
   },
   {
     id: 15130,
@@ -1355,10 +1335,6 @@ export const YAMAHA_MODEL_LIST: BikeModel[] = [
   {
     id: 15374,
     name: 'Kodiak 700 EPS SE',
-  },
-  {
-    id: 15375,
-    name: 'KS 250',
   },
   {
     id: 15376,
