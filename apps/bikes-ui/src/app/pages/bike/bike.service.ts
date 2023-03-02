@@ -37,14 +37,11 @@ export class BikeService {
     this.bikeForm.updateValueAndValidity();
   }
 
-  bikeId(): number {
-    return this.bike.articleCompleteInfo.articleID;
+  updateBikeInfo(): void {
+    Object.assign(this.bike, this.bikeForm.value);
   }
 
-  // TODO: this code needs to be refactored
-  updateBike() {
-    const newValue = this.bikeForm.value;
-    this.bike.articleCompleteInfo.price = newValue.price;
-    this.bike.engineAndTransmission.exhaustSystemName = newValue.description;
+  bikeId(): number {
+    return this.bike.articleCompleteInfo.articleID;
   }
 }

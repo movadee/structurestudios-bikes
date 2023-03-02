@@ -32,7 +32,7 @@
 
       <!-- buttons displayed when user edit bike -->
       <ng-container *ngIf="bikeService.bikeForm.enabled">
-        <button type="submit" (click)="saveBike()" class="primary-btn">Save</button>
+        <button type="button" (click)="saveBike()" class="primary-btn">Save</button>
         <button type="button" (click)="cancelEditBike()" class="secondary-btn">Cancel</button>
       </ng-container>
     </div>

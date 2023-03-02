@@ -19,8 +19,6 @@ export class AddBikeComponent {
   }
 
   navigateToNewBike(event: any) {
-    // bike model contain spaces, but endpoint interprets %20 as a space
-    const bikeModel = event.target.value.replace(/ /g, '%20');
-    this.router.navigate(['/new/' + bikeModel]);
+    this.router.navigate([`/new/${event.target.value}`]);
   }
 }

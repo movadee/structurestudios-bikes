@@ -17,10 +17,10 @@ export class BikeComponent {
   constructor(private router: Router, public bikeService: BikeService, public apiService: ApiService) {}
 
   saveBike() {
-    // TODO: this code needs to be refactored so that form changes auto sync with full bike object
-    this.bikeService.updateBike();
+    this.bikeService.updateBikeInfo();
     this.apiService.saveBike(this.bikeService.bike).subscribe((bike: Bike) => {
       this.bikeService.setBike(bike);
+      this.router.navigate(['']);
     });
   }
 
