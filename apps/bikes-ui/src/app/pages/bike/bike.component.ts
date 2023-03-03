@@ -4,7 +4,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { ApiService } from '../../api.service';
-import { Bike } from '../../bike.model';
 import { BikeService } from './bike.service';
 
 @Component({
@@ -18,8 +17,7 @@ export class BikeComponent {
 
   saveBike() {
     this.bikeService.updateBikeInfo();
-    this.apiService.saveBike(this.bikeService.bike).subscribe((bike: Bike) => {
-      this.bikeService.setBike(bike);
+    this.apiService.saveBike(this.bikeService.bike).subscribe((_) => {
       this.router.navigate(['']);
     });
   }

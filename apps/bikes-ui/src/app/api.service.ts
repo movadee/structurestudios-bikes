@@ -31,7 +31,7 @@ export class ApiService {
     return this.http.get<Bike[]>(externalUrl, { headers: headers });
   }
 
-  saveBike(bike: Bike): Observable<Bike> {
+  saveBike(bike: Bike): Observable<any> {
     return this.http.post<Bike>(this.fakeBikesEndpoint, bike);
   }
 

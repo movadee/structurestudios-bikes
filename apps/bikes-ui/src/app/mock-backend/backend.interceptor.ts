@@ -57,7 +57,7 @@ export class MockBackendInterceptor implements HttpInterceptor {
     // if bike exist in DB update it, else add new bike to db
     bike ? Object.assign(bike, updatedBike) : bikes.push(updatedBike);
     this.updateFakeDB(bikes);
-    return this.ok(bike);
+    return this.ok();
   }
 
   deleteBike(url: string) {
