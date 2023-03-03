@@ -38,7 +38,6 @@ export class BikeService {
   }
 
   updateBikeInfo(): void {
-    // TODO: refactor since this is not scalable code
     const updatedValue = this.bikeForm.value;
     Object.assign(this.bike.articleCompleteInfo, updatedValue);
   }
